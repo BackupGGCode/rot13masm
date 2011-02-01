@@ -20,7 +20,25 @@
 #pragma once
 
 extern "C" {
+	/**
+	 * rot13 on memory block
+	 * @param buff pointer to the beginning of the memory block
+	 * @param len size of the memory block
+	 * @return 0 if everything goes ok, >0 on error
+	 */
 	int rot13(char* buff, int len);
+
+	/**
+	 * rot13 on stdin/stdout
+	 * @return 0 if everything goes ok, >0 on error
+	 */
 	int srot13();
+
+	/**
+	 * rot13 on files
+	 * @param from input file name
+	 * @param to output file name
+	 * @return 0 if everything goes ok, >0 on error
+	 */
 	int frot13(char* from, char* to);
 }
