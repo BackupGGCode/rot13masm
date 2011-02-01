@@ -82,22 +82,22 @@ hSize dword 0
 		mov esi, eax	; esi will keep beginning of the memory block
 		invoke memset, esi, 0, 255	; zero the memory
 
-		mov ecx, 0	; we will use ecx to count readed characters
+		mov ecx, 0	; we will use ecx to count red characters
 		rchar:
 			push ecx	; use stack for save ecx value, getchar will modyfi ecx
 			invoke getchar
 			pop ecx		; get back ecx from the stack
 
-			.if eax==13 || eax==10 || ecx>=254	; if EOL was readed or the end of the buffer
+			.if eax==13 || eax==10 || ecx>=254	; if EOL was red or the end of the buffer
 				jmp rdone						; was reached we need to stop reading
 			.else
-				mov byte ptr [esi], al			; to the byte addresed by esi we are saving readed character
+				mov byte ptr [esi], al			; to the byte addresed by esi we are saving red character
 				inc esi	; move one byte forward in the buffer
 				inc ecx	; increase number of characters saved
 				jmp rchar	; read next character
 			.endif
 		rdone:
-			sub esi, ecx	; move esi to the beginning of readed string
+			sub esi, ecx	; move esi to the beginning of red string
 			invoke rot13, esi, ecx	; do rot13 on memory block
 		
 		.if eax==0		; if everything is ok
