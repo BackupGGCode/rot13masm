@@ -1,5 +1,4 @@
-# rot13masm
-Automatically exported from code.google.com/p/rot13masm
+#rot13masm
 rot13masm is a ROT13 algoritm implementation in MASM32 that can be used in C/C++. The project contains several functions:
 ```
 int rot13(char* buff, int len); - rot13 on memory block
