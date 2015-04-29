@@ -6,6 +6,6 @@ int srot13(); - rot13 on stdin/stdout
 int frot13(char* from, char* to); - rot13 on files
 ```
 rot13 reference can be found here:
-http://rot13masm.googlecode.com/svn/wiki/rot13masm.pdf
+https://github.com/BackupGGCode/rot13masm/raw/wiki/rot13masm.pdf
 
 Please visit my personal website http://dominikcebula.pl/
